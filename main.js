@@ -3,7 +3,7 @@
 */
 // This is the parent class for primary, middle, and highschool classes
 class School {
-  constructor(name) {
+  constructor(name, level, numberOfStudents) {
     this._name = name;
     this._level = ['primary', 'middle', 'high'];
     this._numberOfStudents = numberOfStudents;
@@ -27,19 +27,29 @@ class School {
 }
 
 class Primary extends School {
-  constructor(name) {
+  constructor(name, level, numberOfStudents) {
+    super(name, level, numberOfStudents);
+    this._pickupPolicy = pickupPolicy;
+  }
 
+  get pickupPolicy() {
+    return this._pickupPolicy;
   }
 }
 
 class Middle extends School {
   constructor(name) {
-
+    super(name, level, numberOfStudents);
   }
 }
 
 class High extends School {
   constructor(name) {
+    super(name, level, numberOfStudents);
+    this._sportsTeams = ['Falcons', 'Eagles', 'Panthers'];
+  }
 
+  get sportsTeams() {
+    return this._sportsTeams;
   }
 }
