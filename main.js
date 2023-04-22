@@ -8,4 +8,20 @@ class School {
     this._level = ['primary', 'middle', 'high'];
     this._numberOfStudents = numberOfStudents;
   }
+
+  get name() {
+    return this._name;
+  }
+
+  get level() {
+    return this._level;
+  }
+
+  get numberOfStudents() {
+    return this._numberOfStudents;
+  }
+  // Above are three getter methods for name, level, and #ofStudents...
+  set numberOfStudents(numberOfStudents) {
+    this._numberOfStudents = numberOfStudents;
+  } // Again, I am not sure if I used the setter method correctly...
 }
