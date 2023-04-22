@@ -20,6 +20,10 @@ class School {
   get numberOfStudents() {
     return this._numberOfStudents;
   }
+  // Here under the getters I will make a method to log quickFacts()
+  quickFacts() {
+    console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`)
+  }
   // Above are three getter methods for name, level, and #ofStudents...
   set numberOfStudents(numberOfStudents) {
     if (typeof numberOfStudents === 'string' ) {
