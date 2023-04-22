@@ -25,3 +25,21 @@ class School {
     this._numberOfStudents = numberOfStudents;
   } // Again, I am not sure if I used the setter method correctly...
 }
+
+class Primary extends School {
+  constructor(name) {
+
+  }
+}
+
+class Middle extends School {
+  constructor(name) {
+
+  }
+}
+
+class High extends School {
+  constructor(name) {
+
+  }
+}
