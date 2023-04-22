@@ -22,7 +22,11 @@ class School {
   }
   // Above are three getter methods for name, level, and #ofStudents...
   set numberOfStudents(numberOfStudents) {
-    this._numberOfStudents = numberOfStudents;
+    if (typeof numberOfStudents === 'string' ) {
+      this._numberOfStudents = numberOfStudents;
+    } else {
+      console.log('Invalid input: numberOfStudents must be set to a Number.');
+    }
   } // Again, I am not sure if I used the setter method correctly...
 }
 
