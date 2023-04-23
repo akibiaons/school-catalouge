@@ -34,9 +34,9 @@ class School {
   }
 
   // Below will be the static method named pickSubstitureTeacher
-  static pickSubstitureTeacher(substituteTeachers) {
+  static pickSubstituteTeacher(substituteTeachers) {
     const random = Math.floor(Math.random() * (substituteTeachers.length));
-    return substituteTeachers(random);
+    return substituteTeachers[random];
     /*this._pickSubstituteTeachers = [];
     Math.floor(pickSubstituteTeacher.length * Math.random()); Original code*/
   }
@@ -62,16 +62,19 @@ class Middle extends School {
 } // In the Middle constructor I added level to the arg
 
 class High extends School {
-  constructor(name) {
-    super(name, level, numberOfStudents);
-    this._sportsTeams = ['Falcons', 'Eagles', 'Panthers'];
+  constructor(name, numberOfStudents, sportsTeams) {
+    super(name, 'high', numberOfStudents);
+    this._sportsTeams = sportsTeams;
   }
 
   get sportsTeams() {
-    return this._sportsTeams;
+    console.log(this._sportsTeams);
+    return (this._sportsTeams);
   }
-}
+};
 
 const lorraineHansbury = new Primary ('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.'); // A new instance 
-
 lorraineHansbury.quickFacts();
+School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']);
+const alSmith = new High('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field']);
+alSmith.sportsTeams;
