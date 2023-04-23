@@ -24,6 +24,13 @@ class School {
   quickFacts() {
     console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`)
   }
+
+  // Below will be the static method named pickSubstitureTeacher
+  static pickSubstitureTeacher(pickSubstituteTeacher) {
+    this._pickSubstituteTeacher = [];
+    Math.floor(pickSubstituteTeacher.length * Math.random()); 
+  }
+
   // Above are three getter methods for name, level, and #ofStudents...
   set numberOfStudents(numberOfStudents) {
     if (typeof numberOfStudents === 'string' ) {
@@ -35,7 +42,7 @@ class School {
 }
 
 class Primary extends School {
-  constructor(name, level, numberOfStudents) {
+  constructor(name, level, numberOfStudents, pickupPolicy) {
     super(name, level, numberOfStudents);
     this._pickupPolicy = pickupPolicy;
   }
@@ -61,3 +68,5 @@ class High extends School {
     return this._sportsTeams;
   }
 }
+
+const lorraineHansbury = new Primary ('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.'); // A new instance 
